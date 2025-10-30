@@ -1,0 +1,348 @@
+/* Стили для шапки */
+header {
+  background-color: #00f7ff;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 90px;
+  height: 90px;
+  margin-right: 30px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 0 20px; /* Расстояние между линией и меню */
+  height: 1px;
+  flex-grow: 1; /* Равномерное распределение пространства между логотипом и меню */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff6600;
+}
+
+body {
+  /* Основной цвет фона */
+  background-color: hsl(133, 16%, 22%);
+  width: 85%; 
+  margin-left:auto; 
+  margin-right:auto;
+
+}
+
+
+
+/* Стили для названия сайта */
+.site-title {
+  text-align: right;
+  opacity: 0; /* Начальная прозрачность: 0 */
+  animation: fadeInUp 1.5s ease-out forwards; /* Применение анимации */
+}
+
+/* Анимация */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px); /* Двигаем название вниз */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Возвращаем название в исходное положение */
+  }
+}
+
+
+
+
+/* Стили слайдера */
+.page-title {
+    text-align: center;
+  }
+  
+.slider-container {
+  position: relative;
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+  
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+  
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+.prev-button, .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #39ff08;
+}
+  
+.prev-button {
+  left: 10px;
+}
+  
+.next-button {
+  right: 10px;
+}
+
+/* Стили текста о нас */
+.history_of_group {
+  color: #fff;
+  width:80%;
+  font-size:18px;
+  text-align:center; 
+  font-family:Verdana, Geneva, sans-serif;
+  margin-left:auto; 
+  margin-right:auto;  
+}
+
+/* Стиль текста о составе группы */
+.band_members{
+  color: rgb(255, 255, 255);
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: auto;
+  margin-left: auto; 
+}
+
+/* Стиль текста о составе группы */
+.group_albums{
+  color: rgb(255, 255, 255);
+  width: 100%;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: auto;
+  margin-left: auto; 
+}
+
+
+
+
+/* Стили галереи */
+.column-container {
+  display: flex; /* Размещение элементов в строку */
+  justify-content: space-between; /* Распределение пространства между колонками */
+  color: #fff;
+  height: 97%;
+  width: 100%;
+}
+
+
+.pic {
+  width: 100%;
+  height: 30%;
+}
+
+
+
+/* Стили для каждой колонки */
+.column {
+  flex: 1; /* Равномерное распределение ширины между колонками */
+  margin: 10px; /* Отступ между колонками */
+  padding: 10px; /* Внутренний отступ внутри каждой колонки */
+  border: 5px solid #a7401b; /* Граница для каждой колонки */
+  border-radius: 5px;
+  background: #d5d5d5;
+  color:rgb(112, 17, 255);
+  font-size: 15px;
+  
+}
+
+
+
+
+
+
+/* Стили обратной связи */
+.obratnuj-zvonok{
+	width: 100%;
+	max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.form-zvonok{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+	box-sizing: border-box;
+  color: #fff;
+}
+.form-zvonok div{
+	padding: 15px 0;
+}
+.bot-send-mail{
+	box-sizing: border-box;
+	width: 100%;
+}
+.form-zvonok label,.form-zvonok input{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+.form-zvonok label{
+	margin-bottom: 5px;
+	font-weight: bold;
+
+}
+.form-zvonok input{
+	padding: 10px 15px;
+	margin-top: 10px;
+  color: #fff;
+  background-color: #333333;
+  border: 1px #a7401b solid;
+}
+.form-zvonok label span{
+	color: red;
+}
+.form-zvonok .bot-send-mail{
+	padding: 15px;
+	margin-top: 10px;
+	background: none;
+	text-transform: uppercase;
+	color: #333333;
+	font-weight: bold;
+	background-color: #a7401b;
+	cursor: pointer;
+	border: 3px #a7401b solid;
+	border-radius: 5px;
+}
+.form-zvonok .bot-send-mail:hover{
+	color: #a7401b;
+	background-color: #333333;
+}
+ 
+/* Стили контактов */
+footer {
+  background-color: #ffffff; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 10px 0;
+  text-align: center;
+  width:100%;
+}
+
+.social-icons {
+  font-size: 12; /* Убираем междустрочный интервал для иконок */
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px; /* Расстояние между иконками */
+}
+
+/* Стили для иконок (размер и цвет) */
+.social-icon img {
+  width: 32px; /* Ширина иконки */
+  height: 32px; /* Высота иконки */
+  vertical-align: middle; /* Центрирование иконки по вертикали */
+}
+
+/* Стили для ссылок (при наведении) */
+.social-icon a {
+  color: #fff; /* Цвет ссылки */
+  text-decoration: none; /* Убираем подчеркивание ссылки */
+  transition: color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+.social-icon a:hover {
+  color: #ff6600; /* Цвет ссылки при наведении */
+}
+
+
+
+/* Стили для контейнера полноэкранного изображения */
+#fullscreen-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  text-align: center;
+}
+
+#fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Стили для кнопки закрытия */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Стили для кнопки "Наверх" */
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 10px 20px;
+  background-color: #333333; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#scrollToTopButton:hover {
+  color:#ff6600;
+}
