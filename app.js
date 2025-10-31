@@ -46,6 +46,7 @@ function updateSlider() {
 
 // Инициализация слайдера
 updateSlider();
+startInterval();
 
 
 //открытие на полный экран
@@ -91,4 +92,5 @@ function scrollToTop() {
   }, 15);
 
 }
+
 
