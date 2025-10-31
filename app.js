@@ -31,6 +31,28 @@ function updateSlider() {
     }
   });
 }
+ function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 3000);
+    }
+
+    /**
+     * Функция остановки автопрокрутки
+     * Останавливает заданный ранее интервал
+     */
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Запускаем автопрокрутку при загрузке страницы
+    startAutoPlay();
+
+    // Останавливаем автопрокрутку, если пользователь навёл курсор на слайдер
+    slider.addEventListener('mouseenter', stopAutoPlay);
+
+    // Возобновляем автопрокрутку, когда пользователь убирает курсор
+    slider.addEventListener('mouseleave', startAutoPlay);
 
 // Инициализация слайдера
 updateSlider();
