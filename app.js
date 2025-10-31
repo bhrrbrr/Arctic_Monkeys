@@ -14,18 +14,23 @@ nextButton.addEventListener('click', showNextSlide);
 function showPreviousSlide() {
   slideIndex = (slideIndex - 1 + slideCount) % slideCount;
   updateSlider();
+  resetInterval();
 }
 
 // Функция для показа следующего слайда
 function showNextSlide() {
   slideIndex = (slideIndex + 1) % slideCount;
   updateSlider();
+  resetinterval();
 }
 
 function startInterval(){
-  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  updateSlider();
-  resetInterval();
+  clearInterval(slideInterval);
+  slideInterval = setInterval(showNextSlide, 3000);
+}
+
+functoin resetInteval(){
+  startIntercal();
 }
 
 // Функция для обновления отображения слайдера
@@ -86,3 +91,4 @@ function scrollToTop() {
   }, 15);
 
 }
+
