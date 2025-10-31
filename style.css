@@ -1,6 +1,8 @@
 /* Стили для шапки */
 header {
-  background-color: #00f7ff;
+  background: #00f7ff url(https://images.rocking.gr/latest/2018/812x500/arctic-monkeys_2.jpg) ;
+  background-attachment: fixed; 
+  background-repeat: repeat-x; 
   color: #fff;
   padding: 20px 0;
   display: flex;
@@ -150,7 +152,7 @@ body {
   margin-left: auto; 
 }
 
-/* Стиль текста о составе группы */
+/* Стиль текста об альбомах*/
 .group_albums{
   color: rgb(255, 255, 255);
   width: 100%;
@@ -350,6 +352,7 @@ footer {
   color:#ff6600;
 
 }
+
 
 
 
