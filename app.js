@@ -4,6 +4,7 @@ const nextButton = document.querySelector('.next-button');
 const slides = Array.from(slider.querySelectorAll('img'));
 const slideCount = slides.length;
 let slideIndex = 0;
+let slideInterval;
 
 // Устанавливаем обработчики событий для кнопок
 prevButton.addEventListener('click', showPreviousSlide);
@@ -19,6 +20,12 @@ function showPreviousSlide() {
 function showNextSlide() {
   slideIndex = (slideIndex + 1) % slideCount;
   updateSlider();
+}
+
+function startInterval(){
+  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+  updateSlider();
+  resetInterval();
 }
 
 // Функция для обновления отображения слайдера
@@ -77,4 +84,5 @@ function scrollToTop() {
           clearInterval(scrollInterval);
       }
   }, 15);
+
 }
