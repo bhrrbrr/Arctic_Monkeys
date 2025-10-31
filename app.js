@@ -1,96 +1,67 @@
-const slider = document.querySelector('.slider');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-const slides = Array.from(slider.querySelectorAll('img'));
-const slideCount = slides.length;
-let slideIndex = 0;
-let slideInterval;
 
-// Устанавливаем обработчики событий для кнопок
-prevButton.addEventListener('click', showPreviousSlide);
-nextButton.addEventListener('click', showNextSlide);
-
-// Функция для показа предыдущего слайда
-function showPreviousSlide() {
-  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  updateSlider();
-  resetInterval();
-}
-
-// Функция для показа следующего слайда
-function showNextSlide() {
-  slideIndex = (slideIndex + 1) % slideCount;
-  updateSlider();
-  resetinterval();
-}
-
-function startInterval(){
-  clearInterval(slideInterval);
-  slideInterval = setInterval(showNextSlide, 3000);
-}
-
-functoin resetInteval(){
-  startIntercal();
-}
-
-// Функция для обновления отображения слайдера
-function updateSlider() {
-  slides.forEach((slide, index) => {
-    if (index === slideIndex) {
-      slide.style.display = 'block';
-    } else {
-      slide.style.display = 'none';
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.slider');
+    if (!slider) {
+        return;
     }
-  });
-}
 
-// Инициализация слайдера
-updateSlider();
-startInterval();
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const slides = Array.from(slider.querySelectorAll('img'));
+    const slideCount = slides.length;
+    let slideIndex = 0;
+    let slideInterval;
+
+    function updateSlider() {
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        if (slides[slideIndex]) {
+            slides[slideIndex].classList.add('active');
+        }
+    }
+
+    function showNextSlide() {
+        slideIndex = (slideIndex + 1) % slideCount;
+        updateSlider();
+        resetInterval();
+    }
 
 
-//открытие на полный экран
-function openFullscreenImage(element) {
-  const fullscreenContainer = document.getElementById('fullscreen-container');
-  const fullscreenImage = document.getElementById('fullscreen-image');
+    function showPrevSlide() {
+        slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+        updateSlider();
+        resetInterval();
+    }
 
-  fullscreenImage.src = element.src;
-  fullscreenContainer.style.display = 'block';
-}
+    function startInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(showNextSlide, 2800);
+    }
 
-function closeFullscreenImage() {
-  const fullscreenContainer = document.getElementById('fullscreen-container');
-  fullscreenContainer.style.display = 'none';
-}
+    function resetInterval() {
+        startInterval();
+    }
 
-// Когда пользователь прокручивает страницу вниз 20px от верха, показать кнопку
-window.onscroll = function() {
-  scrollFunction();
-};
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            showPrevSlide();
+        });
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById('scrollToTopButton').style.display = 'block';
-  } else {
-      document.getElementById('scrollToTopButton').style.display = 'none';
-  }
-}
+        nextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            showNextSlide();
+        });
+    }
+    updateSlider();
+    startInterval();
 
-// Плавный скроллинг при клике на кнопку "Наверх"
-document.getElementById('scrollToTopButton').addEventListener('click', function() {
-  scrollToTop();
+    slider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        startInterval();
+    });
 });
-
-function scrollToTop() {
-  const scrollStep = -window.scrollY / 15;
-  const scrollInterval = setInterval(function() {
-      if (window.scrollY !== 0) {
-          window.scrollBy(0, scrollStep);
-      } else {
-          clearInterval(scrollInterval);
-      }
-  }, 15);
-
-}
-
-
