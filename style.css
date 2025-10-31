@@ -2,7 +2,7 @@
 header {
   background-color: #00f7ff;
   color: #fff;
-  padding: 20px 0;
+  padding: 25px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -345,4 +345,5 @@ footer {
 
 #scrollToTopButton:hover {
   color:#ff6600;
+
 }
