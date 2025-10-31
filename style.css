@@ -53,8 +53,7 @@ nav a:hover {
 
 body {
   /* Основной цвет фона */
-  background-image: url("https://yandex-images.clstorage.net/bnuy99335/e1e9049X0o9S/inZ0jOe4ckzY90PELdpHfqZHSkPF-mowW-7SyfmRzGbYvc2A21sjqUOyw7B_6NOMyLfw5LUWV-c2EP1fdmeLd54zQJkDyHIdnEfnBY0bRipnk3vi4HqpU-ws8M-e4o7UygpJUI_aIurwA9PFq0zDO5xQdRKxAUXnpEG96ZPirgOrJ0UPoFiSry6UgnetKObqVCVIhAfOGvFPLmCePVKcNKuZmaD5C6LYkoZypAvPMpmt4KcQ0WJk1FRhztjwce2yqHalTZIogsxMZMPGH1tGiOZEueXlfMhA7O7z__yTzLRb6Gvg2ggBmGKU0WUK_hPK_KM14KICBQU1cy85I8COUzo2pLzCCnK9ryQTZE0Kt1r0ZChlVY3Kkrwvod__INy1-AgI4mh5kimRVWJn6H3wm9yShTHAs_dltGE_a_MDvkIJxIdfo5uRHXzGoQZvOPYZJjVqRrQMuCF9PpBeX0CeJeuquJDruCMZ8KZRBep-kbivIcTj8FOFFwTDTSjD049iWpSG3nMIsFyNFeBUngqFegXmW4VHH4jDnxyQDxzw_zU6KvnRGBpTmUEnE8dqD-H5jFHkcYEjZSYGoqzpQ9OuQook917BeFOfv7ShtN3ptpgUNWnVVu268m9_4gxdAOwH64vKMGkr8IighsKH2AyBCy6zBVOQUjbmxQNc-IKwbMJYdJX_w9pi_W0Ho_ftW7RbRBcoRFfNWpCtHKIsz1O91ai56CJpyyL6MnTilgl_4Vn9ETRRgkAn1sTQrvlzQ_zQeqTljRML461uJYM3vAomGxWVO7RHfJqTnkwiDpxxbLRIK-ui69lwKRPXknXYT-H6jKAkMoAiVQRVEh96g7OsUxmUVI6haOC_vKfjVG05ZboUdngkNZ3LMvx_YCz-Ao40GxhoktsakypBZ4DXWuzDW1_zN9HhI7TlJcHNWKCi3qLYZFd8kvuzf08UoZW_2naq5SXLtcU-ClEu7kP9I") ;
-  background-attachment: fixed; 
+  background: linear-gradient(blue, pink);
   width: 85%; 
   margin-left:auto; 
   margin-right:auto;
@@ -351,6 +350,7 @@ footer {
   color:#ff6600;
 
 }
+
 
 
 
