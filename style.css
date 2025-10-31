@@ -53,7 +53,7 @@ nav a:hover {
 
 body {
   /* Основной цвет фона */
-  background-color: hsl(133, 16%, 22%);
+  /*background-color: hsl(133, 16%, 22%);*/
   background: linear-gradient(blue, pink);
   width: 85%; 
   margin-left:auto; 
@@ -351,6 +351,7 @@ footer {
   color:#ff6600;
 
 }
+
 
 
 
