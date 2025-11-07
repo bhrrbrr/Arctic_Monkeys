@@ -5,9 +5,9 @@ const slides = Array.from(slider.querySelectorAll('img'));
 const slideCount = slides.length;
 let slideIndex = 0;
 
-// Устанавливаем обработчики событий для кнопок
-prevButton.addEventListener('click', showPreviousSlide);
-nextButton.addEventListener('click', showNextSlide);
+// Переменные для автоматической прокрутки
+let autoplayInterval;
+const autoplayDelay = 3000; // Задержка между слайдами в миллисекундах (например, 3 секунды)
 
 // Функция для показа предыдущего слайда
 function showPreviousSlide() {
@@ -31,32 +31,43 @@ function updateSlider() {
     }
   });
 }
- function startAutoPlay() {
-        autoPlayInterval = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 3000);
-    }
 
-    /**
-     * Функция остановки автопрокрутки
-     * Останавливает заданный ранее интервал
-     */
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
+// *** НОВАЯ ФУНКЦИЯ ДЛЯ АВТОМАТИЧЕСКОЙ ПРОКРУТКИ ***
+function startAutoplay() {
+  autoplayInterval = setInterval(showNextSlide, autoplayDelay);
+}
 
-    // Запускаем автопрокрутку при загрузке страницы
-    startAutoPlay();
+// Опционально: функция для остановки автоматической прокрутки
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+}
 
-    // Останавливаем автопрокрутку, если пользователь навёл курсор на слайдер
-    slider.addEventListener('mouseenter', stopAutoPlay);
+// Устанавливаем обработчики событий для кнопок
+// Добавляем логику для остановки/перезапуска автопрокрутки при ручной навигации
+prevButton.addEventListener('click', () => {
+  stopAutoplay(); // Останавливаем автопрокрутку
+  showPreviousSlide();
+  startAutoplay(); // Запускаем снова
+});
 
-    // Возобновляем автопрокрутку, когда пользователь убирает курсор
-    slider.addEventListener('mouseleave', startAutoPlay);
+nextButton.addEventListener('click', () => {
+  stopAutoplay(); // Останавливаем автопрокрутку
+  showNextSlide();
+  startAutoplay(); // Запускаем снова
+});
 
 // Инициализация слайдера
 updateSlider();
+// *** ЗАПУСК АВТОМАТИЧЕСКОЙ ПРОКРУТКИ ПРИ ЗАГРУЗКЕ ***
+startAutoplay();
 
+// Опционально: остановка автопрокрутки при наведении курсора на слайдер
+// и возобновление при уходе курсора (улучшает UX)
+slider.addEventListener('mouseenter', stopAutoplay);
+slider.addEventListener('mouseleave', startAutoplay);
+
+
+// --- Ваш существующий код ниже остается без изменений ---
 
 //открытие на полный экран
 function openFullscreenImage(element) {
