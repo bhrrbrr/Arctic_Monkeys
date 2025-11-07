@@ -7,7 +7,7 @@ let slideIndex = 0;
 
 // Переменные для автоматической прокрутки
 let autoplayInterval;
-const autoplayDelay = 3000; // Задержка между слайдами в миллисекундах (например, 3 секунды)
+const autoplayDelay = 3000; 
 
 // Функция для показа предыдущего слайда
 function showPreviousSlide() {
@@ -111,3 +111,4 @@ function scrollToTop() {
       }
   }, 15);
 }
+
